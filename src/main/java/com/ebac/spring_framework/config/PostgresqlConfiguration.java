@@ -1,5 +1,6 @@
 package com.ebac.spring_framework.config;
 
+import com.ebac.spring_framework.utils.Criptografia;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,15 +8,15 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
 @Configuration
-public class MysqlConfiguration {
+public class PostgresqlConfiguration {
 
     @Bean
     public DataSource dataSource() {
         return DataSourceBuilder.create()
-                .url("jdbc:mysql://localhost:3306/ebac?useSSL=false&serverTimezone=UTC")
-//                .username("---")
-//                .password("---")
-                .driverClassName("com.mysql.cj.jdbc.Driver")
+                .url("jdbc:postgresql://localhost:5432/cinema")
+                .username(Criptografia.getUser())
+                .password(Criptografia.getPassword())
+                .driverClassName("org.postgresql.Driver")
                 .build();
     }
 }

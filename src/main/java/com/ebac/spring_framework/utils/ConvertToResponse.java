@@ -1,18 +1,16 @@
 package com.ebac.spring_framework.utils;
 
-import com.ebac.spring_framework.builder.CampeonatoResponseBuilder;
-import com.ebac.spring_framework.entities.Campeonato;
-import com.ebac.spring_framework.response.CampeonatoResponse;
+import com.ebac.spring_framework.builder.FilmeResponseBuilder;
+import com.ebac.spring_framework.entities.Filme;
+import com.ebac.spring_framework.response.FilmeResponse;
 
 public class ConvertToResponse {
 
-    public static CampeonatoResponse campeonatoToResponse(Campeonato c){
-        return
-        CampeonatoResponseBuilder.create()
-                                 .id(c.getId())
-                                 .nome(c.getNome())
+    public static FilmeResponse filmeToResponse(Filme c){
+        return FilmeResponseBuilder.create()
+                                 .id(c.getIdFilme())
+                                 .titulo(c.getTitulo())
                                  .ano(c.getAno())
-                                 .pais(c.getPais())
                                  .build();
     }
 }
