@@ -1,6 +1,5 @@
 package com.ebac.spring_framework.config;
 
-import com.ebac.spring_framework.utils.Criptografia;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,8 +13,8 @@ public class PostgresqlConfiguration {
     public DataSource dataSource() {
         return DataSourceBuilder.create()
                 .url("jdbc:postgresql://localhost:5432/cinema")
-                .username(Criptografia.getUser())
-                .password(Criptografia.getPassword())
+//                .username(Criptografia.getUser())
+//                .password(Criptografia.getPassword())
                 .driverClassName("org.postgresql.Driver")
                 .build();
     }
